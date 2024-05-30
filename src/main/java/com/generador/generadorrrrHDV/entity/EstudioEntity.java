@@ -19,6 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "estudio")
 public class EstudioEntity {
 
     @Id
@@ -35,4 +36,25 @@ public class EstudioEntity {
     @Column(name = "anio")
     private Date anio;
 
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public EstudioEntity(String nombre, String lugarGrado, Date anio) {
+        this.nombre = nombre;
+        this.lugarGrado = lugarGrado;
+        this.anio = anio;
+    }
+    
+    
+
 }
+

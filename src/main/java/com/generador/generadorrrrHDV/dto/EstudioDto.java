@@ -13,8 +13,21 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class EstudioDto {
 
+    
     private String nombreInstituto;
     private String lugarGrado;
     private Date anio;
 
+    
+    public String getNombreInstituto() {
+        return nombreInstituto;
+    }
+
+    public String getLugarGrado() {
+        return lugarGrado;
+    }
+
+    public Date getAnio() {
+        return anio;
+    }
 }

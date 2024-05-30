@@ -21,4 +21,33 @@ public class LaboralDto {
     private Date fechaInicio;
     private Date fechaFin;
     private String cargo;
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
+    }
+
+    public String getDireccionEmpresa() {
+        return direccionEmpresa;
+    }
+
+    public String getTelefonoEmpresa() {
+        return telefonoEmpresa;
+    }
+
+    public String getNombreJefe() {
+        return nombreJefe;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+
 }

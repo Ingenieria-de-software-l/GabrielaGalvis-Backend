@@ -24,4 +24,43 @@ public class PersonalDto {
     private Date fechaNacimientoPersona;
     private String ocupacion;
     private String estadoCivil;
+
+    public String getNombrePersona() {
+        return nombrePersona;
+    }
+    public String getIdentificacion() {
+        return identificacion;
+    }
+
+    public String getApellidoPersona() {
+        return apellidoPersona;
+    }
+
+    public String getSexoPersona() {
+        return sexoPersona;
+    }
+
+    public String getCorreoPersona() {
+        return correoPersona;
+    }
+
+    public String getTelefonoPersona() {
+        return telefonoPersona;
+    }
+
+    public String getDireccionPersona() {
+        return direccionPersona;
+    }
+
+    public Date getFechaNacimientoPersona() {
+        return fechaNacimientoPersona;
+    }
+
+    public String getOcupacion() {
+        return ocupacion;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
 }

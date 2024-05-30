@@ -20,8 +20,8 @@ public class ReferenciaService {
         return referenciaRepository.findAll();
     }
 
-    public Optional<ReferenciaEntity> getOneRefencia(String referencia){
-        return referenciaRepository.findByNombreRef(referencia);
+    public Optional<ReferenciaEntity> getById(Long id){
+        return referenciaRepository.findById(id);
     }
 
     public void save(ReferenciaEntity referencia){

@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "laboral")
 public class LaboralEntity {
 
     @Id
@@ -44,4 +46,15 @@ public class LaboralEntity {
 
     @Column(name ="cargo")
     private String cargo;
+
+
+    public LaboralEntity(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nombreJefe, Date fechaInicio, Date fechaFin, String cargo) {
+        this.nombreEmpresa = nombreEmpresa;
+        this.direccionEmpresa = direccionEmpresa;
+        this.telefonoEmpresa = telefonoEmpresa;
+        this.nombreJefe = nombreJefe;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.cargo = cargo;
+    }
 }

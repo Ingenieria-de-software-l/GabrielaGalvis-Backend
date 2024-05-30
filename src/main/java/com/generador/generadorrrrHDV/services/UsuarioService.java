@@ -47,27 +47,27 @@ public class UsuarioService {
     }
 
 
-    private PersonalEntity mapToEntity(PersonalDto dto) {
+    public PersonalEntity mapToEntity(PersonalDto dto) {
         // implement the mapping logic
-        return new PersonalEntity(/* map fields from dto */);
+        return new PersonalEntity(dto.getIdentificacion(), dto.getNombrePersona(),dto.getApellidoPersona(),dto.getSexoPersona(),dto.getCorreoPersona(),dto.getTelefonoPersona(),dto.getDireccionPersona(),dto.getFechaNacimientoPersona(),dto.getOcupacion(),dto.getEstadoCivil()); 
     }
 
     public Optional<UsuarioEntity> getOne(Long id){
         return usuarioRepository.findById(id);
     }
 
-    private EstudioEntity mapToEntity(EstudioDto dto) {
+    public EstudioEntity mapToEntity(EstudioDto dto) {
         // implement the mapping logic
-        return new EstudioEntity(/* map fields from dto */);
+        return new EstudioEntity(dto.getNombreInstituto(),dto.getLugarGrado(),dto.getAnio());
     }
 
-    private ReferenciaEntity mapToEntity(ReferenciaDto dto) {
+    public ReferenciaEntity mapToEntity(ReferenciaDto dto) {
         // implement the mapping logic
-        return new ReferenciaEntity(/* map fields from dto */);
+        return new ReferenciaEntity(dto.getNombreRef(),dto.getOcupacionRef(),dto.getParentesco(),dto.getTelefono());
     }
 
-    private LaboralEntity mapToEntity(LaboralDto dto) {
+    public LaboralEntity mapToEntity(LaboralDto dto) {
         // implement the mapping logic
-        return new LaboralEntity(/* map fields from dto */);
+        return new LaboralEntity(dto.getNombreEmpresa(),dto.getDireccionEmpresa(),dto.getTelefonoEmpresa(),dto.getNombreJefe(),dto.getFechaInicio(),dto.getFechaFin(),dto.getCargo());
     }
 }

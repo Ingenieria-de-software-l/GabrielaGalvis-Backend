@@ -74,7 +74,7 @@ public class PersonalController {
         }
 
         PersonalEntity personal = new PersonalEntity(0,personalDto.getIdentificacion(), personalDto.getNombrePersona(), personalDto.getApellidoPersona(), personalDto.getSexoPersona(), personalDto.getCorreoPersona(), personalDto.getTelefonoPersona(), personalDto.getDireccionPersona(), personalDto.getFechaNacimientoPersona(), personalDto.getOcupacion(), personalDto.getEstadoCivil());
-        personalService.savePersonal(personal);
+        personalService.save(personal);
         return new ResponseEntity(new Mensaje("Se guardo correctamente"), HttpStatus.CREATED);
     }
 }

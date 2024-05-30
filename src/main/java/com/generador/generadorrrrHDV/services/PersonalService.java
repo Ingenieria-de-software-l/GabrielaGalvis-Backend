@@ -24,7 +24,7 @@ public class PersonalService {
         return personalRepository.findByIdentificacion(id);
     }
 
-    public void savePersonal(PersonalEntity personal) {
+    public void save(PersonalEntity personal) {
         personalRepository.save(personal);
     }
 }

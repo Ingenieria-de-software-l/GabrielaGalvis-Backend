@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "personal")
 public class PersonalEntity {
 
     @Id
@@ -54,4 +56,18 @@ public class PersonalEntity {
 
     @Column(name = "estadoCivil")
     private String estadoCivil;
+
+ public PersonalEntity  (String identificacion, String nombrePersona, String apellidoPersona, String sexoPersona, String correoPersona, String telefonoPersona, String direccionPersona, Date fechaNacimientoPersona, String ocupacion, String estadoCivil) {
+        this.identificacion = identificacion;
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
+        this.sexoPersona = sexoPersona;
+        this.correoPersona = correoPersona;
+        this.telefonoPersona = telefonoPersona;
+        this.direccionPersona = direccionPersona;
+        this.fechaNacimientoPersona = fechaNacimientoPersona;
+        this.ocupacion = ocupacion;
+        this.estadoCivil = estadoCivil;
+    }   
+
 }

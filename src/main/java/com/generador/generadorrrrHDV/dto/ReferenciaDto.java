@@ -16,4 +16,21 @@ public class ReferenciaDto {
     private String parentesco;
     private String telefono;
 
+    public String getNombreRef() {
+        return nombreRef;
+    }
+
+    public String getOcupacionRef() {
+        return ocupacionRef;
+    }
+
+    public String getParentesco() {
+        return parentesco;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+   
+
 }

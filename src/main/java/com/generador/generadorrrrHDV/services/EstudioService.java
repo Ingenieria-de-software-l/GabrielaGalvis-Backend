@@ -24,6 +24,10 @@ public class EstudioService {
     public Optional<EstudioEntity> getOne(String nombreInstituto){
         return estudioRepository.findByNombre(nombreInstituto);
     }
+    public Optional<EstudioEntity> getById(Long id){
+        return estudioRepository.findById(id);
+    }
+
 
     public void save(EstudioEntity estudioEntity){
         estudioRepository.save(estudioEntity);

@@ -2,7 +2,15 @@ package com.generador.generadorrrrHDV.controller;
 
 import com.generador.generadorrrrHDV.dto.Mensaje;
 import com.generador.generadorrrrHDV.dto.UsuarioDto;
+import com.generador.generadorrrrHDV.entity.EstudioEntity;
+import com.generador.generadorrrrHDV.entity.LaboralEntity;
+import com.generador.generadorrrrHDV.entity.PersonalEntity;
+import com.generador.generadorrrrHDV.entity.ReferenciaEntity;
 import com.generador.generadorrrrHDV.entity.UsuarioEntity;
+import com.generador.generadorrrrHDV.services.EstudioService;
+import com.generador.generadorrrrHDV.services.LaboralService;
+import com.generador.generadorrrrHDV.services.PersonalService;
+import com.generador.generadorrrrHDV.services.ReferenciaService;
 import com.generador.generadorrrrHDV.services.UsuarioService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +28,19 @@ public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    PersonalService personalService;
+
+    @Autowired
+    EstudioService estudioService;
+
+    @Autowired
+    ReferenciaService referenciaService;
+
+    @Autowired
+    LaboralService laboralService;
+    
+
     @GetMapping("/listaUsuario")
     public ResponseEntity<List<UsuarioEntity>> list(){
         List<UsuarioEntity> list = usuarioService.list();
@@ -28,8 +49,16 @@ public class UsuarioController {
 
     @PostMapping("/createUsuario")
     public ResponseEntity<?> create(@RequestBody UsuarioDto usuarioDto) {
-        UsuarioEntity usuario = usuarioService.mapToEntity(usuarioDto);
-        /*UsuarioEntity usuario = new UsuarioEntity(0,usuarioDto.getPersonal(), usuarioDto.getEstudio(), usuarioDto.getReferencia(), usuarioDto.getLaboral());*/
+
+        ReferenciaEntity referencia = usuarioService.mapToEntity(usuarioDto.getReferencia());
+        EstudioEntity estudio = usuarioService.mapToEntity(usuarioDto.getEstudio());
+        PersonalEntity personal = usuarioService.mapToEntity(usuarioDto.getPersonal());
+        LaboralEntity laboral = usuarioService.mapToEntity(usuarioDto.getLaboral());
+        
+        //UsuarioEntity usuario = usuarioService.mapToEntity(usuarioDto);
+
+
+        UsuarioEntity usuario = new UsuarioEntity(0, personal, estudio, referencia, laboral);
         usuarioService.save(usuario);
         return new ResponseEntity<>(new Mensaje("Se guardo con exito la informacion"), HttpStatus.CREATED);
     }

@@ -10,5 +10,6 @@ import java.util.Optional;
 public interface ReferenciaRepository extends JpaRepository<ReferenciaEntity, Long> {
 
         Optional<ReferenciaEntity> findByNombreRef(String referencia);
+        Optional<ReferenciaEntity> findById(Long id);
 
 }

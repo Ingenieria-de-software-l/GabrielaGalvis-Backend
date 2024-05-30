@@ -41,7 +41,7 @@ public class PersonalEntity {
     private String direccionPersona;
 
     @Column(name = "fechaNacimiento")
-    private LocalDate fechaNacimientoPersona;
+    private Date fechaNacimientoPersona;
 
     @Column(name = "ocupacion")
     private String ocupacion;

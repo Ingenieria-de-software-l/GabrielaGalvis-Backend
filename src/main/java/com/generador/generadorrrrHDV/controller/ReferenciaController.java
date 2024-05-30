@@ -26,7 +26,7 @@ public class ReferenciaController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @PostMapping("/createReferenciaa")
+    @PostMapping("/createReferencia")
     public ResponseEntity<?> createReferencia(@RequestBody ReferenciaDto referenciaDto){
         if(StringUtils.isBlank(referenciaDto.getNombreRef())){
             return new ResponseEntity(new Mensaje("Este campo nombre persona es obligatorio "), HttpStatus.BAD_REQUEST);

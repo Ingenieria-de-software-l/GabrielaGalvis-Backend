@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-
+import java.util.Date;
 @Setter
 @Getter
 @NoArgsConstructor
@@ -25,5 +25,5 @@ public class EstudioEntity {
     private String lugarGrado;
 
     @Column(name = "anio")
-    private LocalDate anio;
+    private Date anio;
 }

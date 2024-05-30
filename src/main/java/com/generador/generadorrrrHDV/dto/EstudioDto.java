@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.util.Date;
 import java.time.LocalDate;
 
 @Setter
@@ -15,6 +15,6 @@ public class EstudioDto {
 
     private String nombreInstituto;
     private String lugarGrado;
-    private LocalDate anio;
+    private Date anio;
 
 }

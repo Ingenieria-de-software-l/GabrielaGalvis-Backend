@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Setter
 @Getter
@@ -17,7 +18,7 @@ public class LaboralDto {
     private String direccionEmpresa;
     private String telefonoEmpresa;
     private String nombreJefe;
-    private LocalDate fechaInicio;
-    private LocalDate fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String cargo;
 }

@@ -21,7 +21,7 @@ public class PersonalDto {
     private String correoPersona;
     private String telefonoPersona;
     private String direccionPersona;
-    private LocalDate fechaNacimientoPersona;
+    private Date fechaNacimientoPersona;
     private String ocupacion;
     private String estadoCivil;
 }

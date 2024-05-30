@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.util.Date;
 import java.time.LocalDate;
 
 @Setter
@@ -31,10 +31,10 @@ public class LaboralEntity {
     private String nombreJefe;
 
     @Column(name = "fechaInicio")
-    private LocalDate fechaInicio;
+    private Date fechaInicio;
 
     @Column(name = "fechaFin")
-    private LocalDate fechaFin;
+    private Date fechaFin;
 
     @Column(name ="cargo")
     private String cargo;

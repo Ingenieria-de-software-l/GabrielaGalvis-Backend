@@ -17,11 +17,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/personal")
 @CrossOrigin(origins="http://localhost:4200")
-@Controller
 public class PersonalController {
 
     @Autowired
-    private PersonalService personalService;
+    PersonalService personalService;
 
     @GetMapping("/listaPersonal")
     public ResponseEntity<List<PersonalEntity>> listaPersonal(){

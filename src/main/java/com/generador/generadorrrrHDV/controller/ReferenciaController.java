@@ -28,6 +28,8 @@ public class ReferenciaController {
 
     @PostMapping("/createReferencia")
     public ResponseEntity<?> createReferencia(@RequestBody ReferenciaDto referenciaDto){
+
+        System.out.println(referenciaDto.getNombreRef()+ " " + referenciaDto.getOcupacionRef() + " " + referenciaDto.getParentesco() + " " + referenciaDto.getTelefono());
         if(StringUtils.isBlank(referenciaDto.getNombreRef())){
             return new ResponseEntity(new Mensaje("Este campo nombre persona es obligatorio "), HttpStatus.BAD_REQUEST);
         }
@@ -44,7 +46,7 @@ public class ReferenciaController {
             return new ResponseEntity(new Mensaje("Este campo telefono es obligatorio "), HttpStatus.BAD_REQUEST);
         }
 
-        ReferenciaEntity referencia = new ReferenciaEntity(referenciaDto.getNombreRef(), referenciaDto.getOcupacionRef(), referenciaDto.getParentesco(), referenciaDto.getTelefono());
+        ReferenciaEntity referencia = new ReferenciaEntity(0,referenciaDto.getNombreRef(), referenciaDto.getOcupacionRef(), referenciaDto.getParentesco(), referenciaDto.getTelefono());
         referenciaService.save(referencia);
         return new ResponseEntity(new Mensaje("Se guardo con exito la informacion"), HttpStatus.CREATED);
     }

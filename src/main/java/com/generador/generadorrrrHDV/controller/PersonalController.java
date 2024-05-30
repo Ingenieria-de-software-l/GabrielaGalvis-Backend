@@ -31,6 +31,8 @@ public class PersonalController {
     @PostMapping("/createPersonal")
     public ResponseEntity<?> createPersonal(@RequestBody PersonalDto personalDto){
 
+        System.out.println(personalDto.getIdentificacion()+ " " + personalDto.getNombrePersona() + " " + personalDto.getApellidoPersona() + " " + personalDto.getSexoPersona() + " " + personalDto.getCorreoPersona() + " " + personalDto.getTelefonoPersona() + " " + personalDto.getDireccionPersona() + " " + personalDto.getFechaNacimientoPersona() + " " + personalDto.getOcupacion() + " " + personalDto.getEstadoCivil());
+
         if(StringUtils.isBlank(personalDto.getIdentificacion())){
             return new ResponseEntity(new Mensaje("Este campo identificacion es obligatorio "), HttpStatus.BAD_REQUEST);
         }
@@ -71,7 +73,7 @@ public class PersonalController {
             return new ResponseEntity(new Mensaje("Este campo estado civil es obligatorio "), HttpStatus.BAD_REQUEST);
         }
 
-        PersonalEntity personal = new PersonalEntity(personalDto.getIdentificacion(), personalDto.getNombrePersona(), personalDto.getApellidoPersona(), personalDto.getSexoPersona(), personalDto.getCorreoPersona(), personalDto.getTelefonoPersona(), personalDto.getDireccionPersona(), personalDto.getFechaNacimientoPersona(), personalDto.getOcupacion(), personalDto.getEstadoCivil());
+        PersonalEntity personal = new PersonalEntity(0,personalDto.getIdentificacion(), personalDto.getNombrePersona(), personalDto.getApellidoPersona(), personalDto.getSexoPersona(), personalDto.getCorreoPersona(), personalDto.getTelefonoPersona(), personalDto.getDireccionPersona(), personalDto.getFechaNacimientoPersona(), personalDto.getOcupacion(), personalDto.getEstadoCivil());
         personalService.savePersonal(personal);
         return new ResponseEntity(new Mensaje("Se guardo correctamente"), HttpStatus.CREATED);
     }

@@ -28,6 +28,8 @@ public class EstudioController {
 
     @PostMapping("/createEstudio")
     public ResponseEntity<?> create(@RequestBody EstudioDto estudioDto){
+
+        System.out.println(estudioDto.getNombreInstituto()+ " " + estudioDto.getLugarGrado() + " " + estudioDto.getAnio());
         if(StringUtils.isBlank(estudioDto.getNombreInstituto())){
             return new ResponseEntity(new Mensaje("Este campo nombre instituo es obligatorio "), HttpStatus.BAD_REQUEST);
         }
@@ -40,7 +42,7 @@ public class EstudioController {
             return new ResponseEntity(new Mensaje("Este campo año es obligatorio"), HttpStatus.BAD_REQUEST);
         }
 
-        EstudioEntity estudio = new EstudioEntity(estudioDto.getNombreInstituto(), estudioDto.getLugarGrado(), estudioDto.getAnio());
+        EstudioEntity estudio = new EstudioEntity(0,estudioDto.getNombreInstituto(), estudioDto.getLugarGrado(), estudioDto.getAnio());
         estudioService.save(estudio);
         return new ResponseEntity(new Mensaje("Se guardo con exito la informacion"), HttpStatus.CREATED);
     }

@@ -28,6 +28,8 @@ public class LaboralController {
 
     @PostMapping("/createLaboral")
     public ResponseEntity<?> createLaboral(@RequestBody LaboralDto laboralDto){
+
+        System.out.println(laboralDto.getNombreEmpresa()+ " " + laboralDto.getDireccionEmpresa() + " " + laboralDto.getTelefonoEmpresa() + " " + laboralDto.getNombreJefe() + " " + laboralDto.getFechaInicio() + " " + laboralDto.getFechaFin() + " " + laboralDto.getCargo());
         if(StringUtils.isBlank(laboralDto.getNombreEmpresa())){
             return new ResponseEntity(new Mensaje("Este campo nombre empresa es obligatorio "), HttpStatus.BAD_REQUEST);
         }
@@ -56,7 +58,7 @@ public class LaboralController {
             return new ResponseEntity(new Mensaje("Este campo cargo es obligatorio "), HttpStatus.BAD_REQUEST);
         }
 
-        LaboralEntity laboral = new LaboralEntity(laboralDto.getNombreEmpresa(), laboralDto.getDireccionEmpresa(), laboralDto.getTelefonoEmpresa(), laboralDto.getNombreJefe(), laboralDto.getFechaInicio(), laboralDto.getFechaFin(), laboralDto.getCargo());
+        LaboralEntity laboral = new LaboralEntity(0,laboralDto.getNombreEmpresa(), laboralDto.getDireccionEmpresa(), laboralDto.getTelefonoEmpresa(), laboralDto.getNombreJefe(), laboralDto.getFechaInicio(), laboralDto.getFechaFin(), laboralDto.getCargo());
         laboralService.save(laboral);
         return new ResponseEntity(new Mensaje("Se guardo con exito la informacion"), HttpStatus.CREATED);
     }

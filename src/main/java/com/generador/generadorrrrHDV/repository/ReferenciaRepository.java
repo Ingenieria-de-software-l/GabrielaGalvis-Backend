@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ReferenciaRepository extends JpaRepository<ReferenciaEntity, String> {
+public interface ReferenciaRepository extends JpaRepository<ReferenciaEntity, Long> {
 
         Optional<ReferenciaEntity> findByNombreRef(String referencia);
 

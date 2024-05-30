@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface LaboralRepository extends JpaRepository<LaboralEntity, String> {
+public interface LaboralRepository extends JpaRepository<LaboralEntity, Long> {
 
     Optional<LaboralEntity> findByNombreEmpresa(String nombreEmpresa);
 
